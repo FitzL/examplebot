@@ -17,7 +17,7 @@ var commands = [];
 const prefix = "!";
 const dir = "comandos"; //donde están tus comandos
 
-client.on('ready', () => {
+client.on('ready', () => { // Cuando arranca el bot
 	console.log("Conectado como ", chalk.blue(client.user.displayName));
   const commandFiles = fs.readdirSync(path.join(__dirname, dir)); //capturamos todos los archivos de la carpeta
 
@@ -36,7 +36,7 @@ client.on('ready', () => {
   }
 });
 
-client.on('messageCreate', async (_message) => {
+client.on('messageCreate', async (_message) => { // Cada que se manda un mensaje
 	if (message.author.bot) { return }; // Si el autor es un bot rechaza el mensaje
 
 	let args = message.content.trim().split(/\s+/); //elimina espacios en blancos [/\s+/]
